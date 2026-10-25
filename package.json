@@ -1,0 +1,26 @@
+{
+  "name": "applycation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local-first Chrome extension for careful job application form filling.",
+  "scripts": {
+    "prepare": "git config core.hooksPath .githooks",
+    "build": "node build.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests",
+    "check:privacy": "sh scripts/guard-profile.sh",
+    "check": "npm run check:privacy && npm run typecheck && npm run lint && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/chrome": "^0.1.39",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.0.0",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.0",
+    "typescript": "^5.8.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^4.1.12"
+  }
+}
